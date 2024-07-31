@@ -1,0 +1,65 @@
+/*Stile applicato a tutti gli elementi*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*Stile del corpo della pagina*/
+body {
+    min-height: 100vh;
+    background: radial-gradient(#4c0c0c, #250707);
+    overflow: hidden;
+}
+
+/*Stile dell'indice*/
+i {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    filter: drop-shadow(5px 5px 10px #000) drop-shadow(0px 0px 10px #f00);
+    pointer-events: none;
+    animation: animate 2s linear infinite;
+}
+
+/*i:before*/
+i::before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 30px;
+    background: #f00;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    transform-origin: bottom center;
+    rotate: 315deg;
+}
+
+/*i:after*/
+i::after {
+    content: '';
+    position: absolute;
+    bottom: 2.5px;
+    width: 30px;
+    height: 20px;
+    background: #f00;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    transform-origin: bottom center;
+    rotate: 315deg;
+}
+
+/*Animazione*/
+@keyframes animate {
+    0% {
+        opacity: 0;
+        transform: translate(0,0);
+    }
+    10% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: translate(var(--x),var(--y));
+    }
+}
